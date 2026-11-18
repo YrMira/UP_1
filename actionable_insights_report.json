@@ -1,0 +1,74 @@
+{
+    "report_date": "2026-11-18",
+    "business_goal": "Оптимизация ценообразования, очистка MDM и аудит дистрибуции VanArsdel",
+    "recommendations": {
+        "1_Pricing_Guardrails": {
+            "rule": "Блокировка повышения базовой цены >5%",
+            "target": "47 уникальных SKU с эластичностью < -1.0",
+            "action_required": "Требовать многоуровневое согласование (C-level) для любого повышения цены.",
+            "affected_product_ids_sample": [
+                403,
+                406,
+                407,
+                415,
+                424,
+                433,
+                450,
+                451,
+                456,
+                457
+            ]
+        },
+        "2_MDM_Archiving": {
+            "rule": "Архивация SKU с is_hidden == True и days_since_last_sale > 730",
+            "target": "16 SKU (100% из них в категории Urban)",
+            "action_required": "Перевести в архивный справочник. Исключить из расчета KPI 'широта ассортимента'.",
+            "affected_product_ids": [
+                400,
+                404,
+                406,
+                409,
+                412,
+                416,
+                418,
+                419,
+                423,
+                425,
+                426,
+                427,
+                435,
+                440,
+                459,
+                504
+            ]
+        },
+        "3_Discount_Audit": {
+            "rule": "Автоматическое создание тикета на аудит",
+            "trigger": "price_volatility_pct > 5.0%",
+            "target": "2 записей (SKU + год) с аномальной волатильностью",
+            "action_required": "Отправить уведомление менеджеру по категориям для проверки корректности промо-акций или ошибок ввода.",
+            "top_volatile_samples": [
+                {
+                    "product_id": 545,
+                    "year": 2011,
+                    "price_volatility_pct": 6.704057727455225
+                },
+                {
+                    "product_id": 567,
+                    "year": 2011,
+                    "price_volatility_pct": 5.986704085160399
+                }
+            ]
+        },
+        "4_Distribution_Focus": {
+            "rule": "Приоритетное развитие регионов с наибольшим присутствием конкурентов",
+            "target": "5386 ZIP-кодов (из 8191 общего пробела) в регионах West и East",
+            "regional_breakdown": {
+                "East": 3972,
+                "West": 1414
+            },
+            "action_required": "Перенаправить маркетинговый бюджет на аудит логистических издержек и renegotiation контрактов в этих зонах."
+        }
+    },
+    "pipeline_status": "COMPLETED_SUCCESSFULLY"
+}
