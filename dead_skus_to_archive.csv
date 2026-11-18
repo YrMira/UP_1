@@ -1,0 +1,17 @@
+﻿product_id,last_sale_date,days_since_last_sale,category,is_hidden
+419,2010-01-20,656,Urban,True
+425,2010-02-12,633,Urban,True
+435,2010-02-25,620,Urban,True
+423,2010-02-28,617,Urban,True
+409,2010-06-10,515,Urban,True
+418,2010-09-12,421,Urban,True
+427,2010-09-15,418,Urban,True
+404,2010-09-18,415,Urban,True
+426,2010-11-30,342,Urban,True
+412,2010-12-28,314,Urban,True
+504,2011-03-21,231,Urban,True
+406,2011-03-29,223,Urban,True
+459,2011-06-21,139,Urban,True
+400,2011-08-05,94,Urban,True
+440,2011-08-08,91,Urban,True
+416,2011-11-07,0,Urban,True
